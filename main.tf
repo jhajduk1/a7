@@ -4,8 +4,21 @@ terraform {
   }
 }
 
+variable "subid" {
+}
+variable "appid" {
+}
+variable "appsec" {
+}
+variable "tid" {
+}
+
 provider "azurerm" {
-    features {}
+  subscription_id = var.subid
+  client_id       = var.appid
+  client_secret   = var.appsec
+  tenant_id       = var.tid
+  features {}
 }
 
 locals {
